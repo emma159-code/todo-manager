@@ -1,5 +1,9 @@
 
-import { useState, type FormEvent } from "react";
+import {
+    useState,
+    type FormEvent,
+    type ChangeEvent
+} from "react";
 
 interface LoginProps {
     onRegister?: () => void;
@@ -17,7 +21,7 @@ function Login({ onRegister }: LoginProps) {
         password: ""
     });
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
 
         setFormData({
@@ -34,7 +38,6 @@ function Login({ onRegister }: LoginProps) {
 
     return (
         <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-
             <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-lg">
 
                 <h1 className="text-3xl font-bold text-center mb-8">
@@ -88,6 +91,7 @@ function Login({ onRegister }: LoginProps) {
 
                 <p className="text-center text-sm text-gray-600 mt-6">
                     Don't have an account?{" "}
+
                     <button
                         type="button"
                         onClick={onRegister}

@@ -1,9 +1,13 @@
 
 import Login from "../components/Login";
 
-function LoginPage() {
+interface LoginPageProps {
+    onRegister: () => void;
+}
+
+function LoginPage({ onRegister }: LoginPageProps) {
     return (
-        <Login />
+        <Login onRegister={onRegister} />
     );
 }
 
